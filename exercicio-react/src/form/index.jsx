@@ -9,10 +9,16 @@ function Formulario() {
         evento.preventDefault(); // Impede o envio do formulário
         const imc = peso / (altura ** 2);
         
-        if (imc >= 18.5 && imc <= 24.9) {
-            setResultado('Seu IMC está bom');
+        if (imc < 18.5) {
+            return "baixo peso";
+        } else if (imc <= 24.9) {
+            return "peso adequado (eutrófico)";
+        } else if (imc <= 29.9) {
+            return "sobrepeso";
+        } else if (imc <= 34.9) {
+            return "obesidade grau 1";
         } else {
-            setResultado('Seu IMC está ruim');
+            return "obesidade grau 2 ou maior";
         }
     };
 
