@@ -22,9 +22,14 @@ function Formulario() {
         }
     };
 
+    const handleSubmit = (evento) => {
+        const resultadoIMC = res(evento);
+        setResultado(resultadoIMC);
+    };
+
     return (
         <>
-            <form onSubmit={res}> 
+            <form onSubmit={handleSubmit}> 
                 <div>
                     <label htmlFor="peso">Insira seu peso</label>
                     <input
